@@ -62,7 +62,7 @@ const TopBar = () => {
         </ImgWrapper>
 
         {navList.map(({ icon, title }) => (
-          <NavItem>
+          <NavItem key={title}>
             {icon} <Typography variant="body1">{title}</Typography>
           </NavItem>
         ))}
