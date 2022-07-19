@@ -1,7 +1,7 @@
 import React, { useState, useRef, ReactNode } from "react";
 import { ChevronDown } from "../../assets/svgs";
 import { Typography } from "@mui/material";
-import useOnClickOutside from "../../hooks/useOnClickOutside";
+// import useOnClickOutside from "../../hooks/useOnClickOutside";
 import {
   DropDownContainer,
   DropDownHeader,
@@ -30,7 +30,7 @@ const SelectField = ({ placeholder, options, onSelect }: SelectProps) => {
 
   const ref = useRef();
 
-  useOnClickOutside(ref, () => setIsOpen(false));
+  //   useOnClickOutside(ref, () => setIsOpen(false));
 
   const toggling = () => setIsOpen(!isOpen);
 
@@ -41,7 +41,7 @@ const SelectField = ({ placeholder, options, onSelect }: SelectProps) => {
   };
 
   return (
-    <DropDownContainer ref={ref}>
+    <DropDownContainer>
       <DropDownHeader onClick={toggling}>
         {selectedOption ? (
           selectedOption.label
