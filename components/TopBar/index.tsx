@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useAppSelector } from "../../app/hooks";
-import { Box, Typography, Button } from "@mui/material";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import {
   LinkIcon,
   Instagram,

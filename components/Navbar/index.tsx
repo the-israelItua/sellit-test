@@ -1,12 +1,10 @@
 import Image from "next/image";
-import {
-  AppBar,
-  Typography,
-  Badge,
-  IconButton,
-  Toolbar,
-  Box,
-} from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Badge from "@mui/material/Badge";
+import IconButton from "@mui/material/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import SearchBar from "../SearchBar";
 import ProfileImage from "../../assets/images/profile_image.png";
 import {

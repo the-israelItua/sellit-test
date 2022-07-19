@@ -1,6 +1,6 @@
 import React, { useState, useRef, ReactNode } from "react";
 import { ChevronDown } from "../../assets/svgs";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 // import useOnClickOutside from "../../hooks/useOnClickOutside";
 import {
   DropDownContainer,

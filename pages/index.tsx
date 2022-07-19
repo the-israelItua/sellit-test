@@ -1,5 +1,8 @@
-import type { NextPage, NextPageContext } from "next";
-import { Grid, Box, Typography, styled } from "@mui/material";
+import type { NextPage } from "next";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
 import { getProducts } from "../features/products";
 import { getUser } from "../features/user";
 import { Product } from "../interfaces/product";

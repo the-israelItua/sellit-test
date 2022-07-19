@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import NavBar from "../Navbar";
 import SideBar from "../SideBar";
 import { PageWrapper, Content } from "./styles";

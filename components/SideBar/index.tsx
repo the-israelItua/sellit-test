@@ -1,4 +1,6 @@
-import { Box, Typography, Button } from "@mui/material";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { useAppSelector } from "../../app/hooks";
 import {

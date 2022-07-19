@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import { Bolt } from "../../assets/svgs";
 import { truncate } from "../../utils";
 import { Product } from "../../interfaces/product";
