@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import type { NextPage } from "next";
+import type { NextPage, NextPageContext } from "next";
 import { Grid, Box, Typography, styled } from "@mui/material";
 import { getProducts } from "../features/products";
 import { getUser } from "../features/user";
+import { Product } from "../interfaces/product";
 import { wrapper } from "../app/store";
 import { BagIcon } from "../assets/svgs";
 import TopBar from "../components/TopBar";
@@ -79,8 +79,8 @@ const Home: NextPage = () => {
       </Header>
       <ProductsWrapper>
         <Grid container spacing={2}>
-          {data?.rows?.map((item) => (
-            <Grid item xs={6} sm={4} lg={3}>
+          {data?.rows?.map((item: Product) => (
+            <Grid item xs={6} sm={4} lg={3} key={item.id}>
               <ProductCard item={item} />
             </Grid>
           ))}
@@ -95,6 +95,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
     async () => {
       await dispatch(getUser());
       await dispatch(getProducts());
+      return { props: { data: "" } };
     }
 );
 

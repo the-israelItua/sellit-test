@@ -14,7 +14,7 @@ import {
     products: productsReducer,
   });
   
-  const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) => {
+  const reducer = (state: any, action: AnyAction) => {
     if (action.type === HYDRATE) {
       const nextState = {
         ...state, 
@@ -29,7 +29,7 @@ import {
   export const makeStore = () =>
     configureStore({
       reducer,
-    });
+    }) ;
   
   type Store = ReturnType<typeof makeStore>;
   
@@ -44,3 +44,28 @@ import {
   
   export const wrapper = createWrapper(makeStore, { debug: true });
   
+
+//   import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
+// import { createWrapper, HYDRATE } from 'next-redux-wrapper';
+// import { productsReducer } from '../features/products';
+//   import { userReducer } from '../features/user';
+
+// const store = configureStore({
+//   reducer: {
+//     user: userReducer,
+//     products: productsReducer,
+//   },
+// });
+
+// export type AppDispatch = typeof store.dispatch;
+// export type RootState = ReturnType<typeof store.getState>;
+// export type AppThunk<ReturnType = void> = ThunkAction<
+//   ReturnType,
+//   RootState,
+//   unknown,
+//   Action<string>
+// >;
+
+// const makeStore = () => store;
+
+// export const wrapper = createWrapper(makeStore);
