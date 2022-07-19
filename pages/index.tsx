@@ -31,7 +31,7 @@ const Header = styled("div")(({ theme }) => ({
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
   const { data, pending, error } = useAppSelector((state) => state.products);
-  console.log(data);
+
   return (
     <>
       <TopBar />
