@@ -1,8 +1,20 @@
 import { styled } from "@mui/material/styles";
 
+const Wrapper = styled("div")(({ theme }) => ({
+  width: "15rem",
+  position: "relative",
+  marginBottom: "1.25rem",
+  [theme.breakpoints.down("md")]: {
+    width: "14rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "10rem",
+  },
+}));
+
 const ImageWrapper = styled("div")(({ theme }) => ({
-  width: "15.75rem",
-  height: "15.75rem",
+  width: "15rem",
+  height: "15rem",
   position: "relative",
   borderRadius: "1rem",
   boxShadow: "0px 8px 16px 4px #EAECF5",
@@ -11,8 +23,8 @@ const ImageWrapper = styled("div")(({ theme }) => ({
     height: "14rem",
   },
   [theme.breakpoints.down("sm")]: {
-    width: "14rem",
-    height: "14rem",
+    width: "10rem",
+    height: "10rem",
   },
 }));
 
@@ -41,4 +53,4 @@ const CardPrice = styled("div")(() => ({
   },
 }));
 
-export { CardPrice, ImageWrapper };
+export { Wrapper, CardPrice, ImageWrapper };

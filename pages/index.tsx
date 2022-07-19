@@ -1,17 +1,22 @@
 import React from "react";
 import type { NextPage } from "next";
-import { Grid, Box, Typography } from "@mui/material";
+import { Grid, Box, Typography, styled } from "@mui/material";
 import { BagIcon } from "../assets/svgs";
 import TopBar from "../components/TopBar";
-import SearchBar from "../components/SearchBar";
 import SelectField from "../components/SelectField";
 import ProductCard from "../components/ProductCard";
+
+const ProductsWrapper = styled("div")(({ theme }) => ({
+  padding: "1.5rem",
+  [theme.breakpoints.down("md")]: {
+    padding: "1rem",
+  },
+}));
 
 const Home: NextPage = () => {
   return (
     <>
       <TopBar />
-
       <Box
         sx={{
           display: { xs: "none", sm: "flex" },
@@ -40,7 +45,7 @@ const Home: NextPage = () => {
           onSelect={(val) => console.log(val)}
         />
       </Box>
-      <Box sx={{ px: { xs: "1rem", sm: 0, lg: "1.5rem" } }}>
+      <div>
         <Box
           sx={{
             display: "flex",
@@ -48,6 +53,7 @@ const Home: NextPage = () => {
             pb: "1rem",
             mb: "1rem",
             borderBottom: "1px solid #E7EEFD",
+            margin: "0 1rem",
           }}
         >
           <BagIcon />
@@ -62,24 +68,26 @@ const Home: NextPage = () => {
             All Products
           </Typography>
         </Box>
-        <Grid container spacing={2}>
-          <Grid item xs={6} sm={4} lg={3}>
-            <ProductCard />
+        <ProductsWrapper>
+          <Grid container spacing={2}>
+            <Grid item xs={6} sm={4} lg={3}>
+              <ProductCard />
+            </Grid>
+            <Grid item xs={6} sm={4} lg={3}>
+              <ProductCard />
+            </Grid>
+            <Grid item xs={6} sm={4} lg={3}>
+              <ProductCard />
+            </Grid>
+            <Grid item xs={6} sm={4} lg={3}>
+              <ProductCard />
+            </Grid>
+            <Grid item xs={6} sm={4} lg={3}>
+              <ProductCard />
+            </Grid>
           </Grid>
-          <Grid item xs={6} sm={4} lg={3}>
-            <ProductCard />
-          </Grid>
-          <Grid item xs={6} sm={4} lg={3}>
-            <ProductCard />
-          </Grid>
-          <Grid item xs={6} sm={4} lg={3}>
-            <ProductCard />
-          </Grid>
-          <Grid item xs={6} sm={4} lg={3}>
-            <ProductCard />
-          </Grid>
-        </Grid>
-      </Box>
+        </ProductsWrapper>
+      </div>
     </>
   );
 };

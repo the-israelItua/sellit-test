@@ -1,7 +1,14 @@
 import { styled } from "@mui/material/styles";
 
+const Wrapper = styled("div")(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    padding: "0 1rem",
+  },
+}));
+
 const BgWrapper = styled("div")(({ theme }) => ({
   height: "13.5rem",
+  width: "100%",
   position: "relative",
   margin: "0 1.5rem",
   borderRadius: "1.0625rem",
@@ -12,9 +19,6 @@ const BgWrapper = styled("div")(({ theme }) => ({
     margin: 0,
     borderRadius: "1.0625rem 1.0625rem 0 0",
     height: "10.25rem",
-  },
-  [theme.breakpoints.down("sm")]: {
-    marginRight: "1rem",
   },
 }));
 
@@ -29,7 +33,6 @@ const NavList = styled("div")(({ theme }) => ({
     boxShadow: "0px 8px 16px 4px #EAECF5",
   },
   [theme.breakpoints.down("sm")]: {
-    marginRight: "1rem",
     paddingTop: "3.625rem",
   },
 }));
@@ -41,6 +44,9 @@ const NavItem = styled("div")(({ theme }) => ({
 
   "& svg": {
     marginRight: "0.5rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
   },
 }));
 
@@ -114,10 +120,10 @@ const BtnsWrapper = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     display: "flex",
     mb: "1.5rem",
+    width: "90vw",
   },
   [theme.breakpoints.down("sm")]: {
     display: "block",
-    marginRight: "1rem",
   },
 }));
 
@@ -126,16 +132,13 @@ const Divider = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     display: "block",
     height: "0.8rem",
-    width: "100%",
     background: "#E7EEFD",
     margin: "1.5rem 0",
-  },
-  [theme.breakpoints.down("sm")]: {
-    width: "100%",
   },
 }));
 
 export {
+  Wrapper,
   BgWrapper,
   NavList,
   NavItem,

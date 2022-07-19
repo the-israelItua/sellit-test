@@ -30,7 +30,7 @@ import {
 
 const NavBar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <AppBar
         position="fixed"
         sx={{
@@ -38,6 +38,8 @@ const NavBar = () => {
           height: "4rem",
           padding: "0",
           boxShadow: "0",
+
+          left: 0,
         }}
       >
         <Toolbar>

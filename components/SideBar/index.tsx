@@ -89,6 +89,7 @@ const SideBar = () => {
             mb: "1rem",
             background:
               "linear-gradient(180deg, rgba(119, 189, 255, 0.8) 0%, #55ADFF 100%)",
+            color: "#ffffff",
             boxShadow: "0px 2px 8px #77BDFF",
             borderRadius: "0.75rem",
             fontWeight: 600,

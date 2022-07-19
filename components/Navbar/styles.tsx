@@ -68,7 +68,7 @@ const SignUp = styled(Button)(({ theme }) => ({
     fontWeight: 600,
     fontSize: "0.875em",
     height: "2.5rem",
-    marginLeft: "12.575rem",
+    marginLeft: "2.575rem",
   },
 }));
 

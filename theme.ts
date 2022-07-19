@@ -1,14 +1,19 @@
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#ffffff",
-    },
-    secondary: {
-      main: '#F5F8FF',
-    },
-  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+       "*": {
+          boxSizing: "border-box",
+          margin: 0,
+          padding: 0,
+
+        },
+   
+      }
+    }
+  }
 });
 
 export default theme;
