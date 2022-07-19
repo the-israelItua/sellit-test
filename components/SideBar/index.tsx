@@ -49,6 +49,7 @@ const navList = [
 
 const SideBar = () => {
   const { data, pending, error } = useAppSelector((state) => state.user);
+  console.log(data);
   return (
     <Wrapper>
       <Box sx={{ position: "relative", width: "100%", height: "10rem" }}>

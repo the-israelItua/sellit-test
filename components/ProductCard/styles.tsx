@@ -18,6 +18,7 @@ const ImageWrapper = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: "1rem",
   boxShadow: "0px 8px 16px 4px #EAECF5",
+  overflow: "hidden",
   [theme.breakpoints.down("md")]: {
     width: "14rem",
     height: "14rem",

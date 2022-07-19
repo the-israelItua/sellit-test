@@ -12,8 +12,8 @@ const initialState: UserState = {
     data: {
         about: null,
         name: "",
-        profile_avatar_url: "https://fakeimg.pl",
-        timeline_avatar_url: "https://fakeimg.pl",
+        profile_avatar_url: "https://fakeimg.pl/250x100",
+        timeline_avatar_url: "https://fakeimg.pl/250x100",
         username: ""  
     },
     pending: false,

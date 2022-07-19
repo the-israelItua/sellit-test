@@ -16,5 +16,11 @@ export interface Product {
     tags: string[],
     options: string[],
     created_at: string,
-    created_time: {}
+    created_time: {},
+    images: {
+      id: string,
+      position: null,
+      product_id: string,
+      url: string
+    }[]
   }

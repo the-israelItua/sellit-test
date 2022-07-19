@@ -9,7 +9,12 @@ const ProductCard = ({ item }: { item: Product }) => {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image src="/product.jpeg" alt="" layout="fill" priority />
+        <Image
+          src={item?.images[0]?.url || "https://fakeimg.pl/250x100/"}
+          alt=""
+          layout="fill"
+          priority
+        />
       </ImageWrapper>
       <Typography
         sx={{
