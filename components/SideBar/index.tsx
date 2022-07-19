@@ -1,5 +1,6 @@
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
+import { useAppSelector } from "../../app/hooks";
 import {
   LinkIcon,
   Instagram,
@@ -47,23 +48,28 @@ const navList = [
 ];
 
 const SideBar = () => {
+  const { data, pending, error } = useAppSelector((state) => state.user);
   return (
     <Wrapper>
       <Box sx={{ position: "relative", width: "100%", height: "10rem" }}>
-        <Image src="/shop.png" alt="fade logo" layout="fill" />
+        <Image src={data.profile_avatar_url} alt="fade logo" layout="fill" />
       </Box>
 
       <Box sx={{ background: "#fefefe", position: "absolute", pl: "1.25rem" }}>
         <ImgWrapper>
           <ImgContainer>
-            <Image src="/clear-shop.png" alt="clear logo" layout="fill" />
+            <Image
+              src={data.timeline_avatar_url}
+              alt="clear logo"
+              layout="fill"
+            />
           </ImgContainer>
         </ImgWrapper>
       </Box>
 
       <TextWrapper>
-        <Typography variant="h5">Spoodys Closet</Typography>
-        <Typography variant="body1">@spoodyscloset</Typography>
+        <Typography variant="h5">{data.name}</Typography>
+        <Typography variant="body1">@{data.username}</Typography>
       </TextWrapper>
 
       <SocialsWrapper>

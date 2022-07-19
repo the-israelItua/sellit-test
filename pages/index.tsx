@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import type { NextPage } from "next";
 import { Grid, Box, Typography, styled } from "@mui/material";
+import { getProducts } from "../features/products";
+import { getUser } from "../features/user";
+import { wrapper } from "../app/store";
 import { BagIcon } from "../assets/svgs";
 import TopBar from "../components/TopBar";
 import SelectField from "../components/SelectField";
 import ProductCard from "../components/ProductCard";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 
 const ProductsWrapper = styled("div")(({ theme }) => ({
   padding: "1.5rem",
@@ -13,7 +17,21 @@ const ProductsWrapper = styled("div")(({ theme }) => ({
   },
 }));
 
+const Header = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  paddingBottom: "1rem",
+  marginLeft: "1.5rem",
+  borderBottom: "1px solid #E7EEFD",
+  [theme.breakpoints.down("xs")]: {
+    marginLeft: "0rem",
+  },
+}));
+
 const Home: NextPage = () => {
+  const dispatch = useAppDispatch();
+  const { data, pending, error } = useAppSelector((state) => state.products);
+
   return (
     <>
       <TopBar />
@@ -45,51 +63,39 @@ const Home: NextPage = () => {
           onSelect={(val) => console.log(val)}
         />
       </Box>
-      <div>
-        <Box
+
+      <Header>
+        <BagIcon />
+        <Typography
           sx={{
-            display: "flex",
-            alignItems: "center",
-            pb: "1rem",
-            mb: "1rem",
-            borderBottom: "1px solid #E7EEFD",
-            margin: "0 1rem",
+            fontSize: "1em",
+            fontWeight: 600,
+            color: "#3C4551",
+            ml: "0.5rem",
           }}
         >
-          <BagIcon />
-          <Typography
-            sx={{
-              fontSize: "1em",
-              fontWeight: 600,
-              color: "#3C4551",
-              ml: "0.5rem",
-            }}
-          >
-            All Products
-          </Typography>
-        </Box>
-        <ProductsWrapper>
-          <Grid container spacing={2}>
+          All Products
+        </Typography>
+      </Header>
+      <ProductsWrapper>
+        <Grid container spacing={2}>
+          {data?.rows?.map((item) => (
             <Grid item xs={6} sm={4} lg={3}>
-              <ProductCard />
+              <ProductCard item={item} />
             </Grid>
-            <Grid item xs={6} sm={4} lg={3}>
-              <ProductCard />
-            </Grid>
-            <Grid item xs={6} sm={4} lg={3}>
-              <ProductCard />
-            </Grid>
-            <Grid item xs={6} sm={4} lg={3}>
-              <ProductCard />
-            </Grid>
-            <Grid item xs={6} sm={4} lg={3}>
-              <ProductCard />
-            </Grid>
-          </Grid>
-        </ProductsWrapper>
-      </div>
+          ))}
+        </Grid>
+      </ProductsWrapper>
     </>
   );
 };
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  ({ dispatch }) =>
+    async () => {
+      await dispatch(getUser());
+      await dispatch(getProducts());
+    }
+);
 
 export default Home;

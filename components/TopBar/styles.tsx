@@ -72,6 +72,7 @@ const ImgContainer = styled("div")(() => ({
   width: "4.5rem",
   height: "4.5rem",
   borderRadius: "1.5rem",
+  overflow: "hidden;",
 }));
 
 const TextWrapper = styled("div")(({ theme }) => ({
@@ -120,7 +121,6 @@ const BtnsWrapper = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     display: "flex",
     mb: "1.5rem",
-    width: "90vw",
   },
   [theme.breakpoints.down("sm")]: {
     display: "block",

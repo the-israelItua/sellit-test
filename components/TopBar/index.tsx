@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useAppSelector } from "../../app/hooks";
 import { Box, Typography, Button } from "@mui/material";
 import {
   LinkIcon,
@@ -50,16 +51,21 @@ const navList = [
 ];
 
 const TopBar = () => {
+  const { data, pending, error } = useAppSelector((state) => state.user);
   return (
     <>
       <Wrapper>
         <BgWrapper>
-          <Image src="/bg.png" alt="store image" layout="fill" />
+          <Image src="/bg.png" alt="store image" layout="fill" priority />
         </BgWrapper>
         <NavList>
           <ImgWrapper>
             <ImgContainer>
-              <Image src="/clear-shop.png" alt="clear logo" layout="fill" />
+              <Image
+                src={data.timeline_avatar_url}
+                alt="clear logo"
+                layout="fill"
+              />
             </ImgContainer>
           </ImgWrapper>
 
@@ -70,8 +76,8 @@ const TopBar = () => {
           ))}
         </NavList>
         <TextWrapper>
-          <Typography variant="h5">Spoodys Closet</Typography>
-          <Typography variant="body1">@spoodyscloset</Typography>
+          <Typography variant="h5">{data.name}</Typography>
+          <Typography variant="body1">@{data.username}</Typography>
         </TextWrapper>
 
         <SocialsWrapper>

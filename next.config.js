@@ -1,11 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+
 
 module.exports = {
-  nextConfig,
+  images: {
+    domains: ['serverless-backend-test.s3.amazonaws.com', "fakeimg.pl"],
+},
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -13,6 +11,6 @@ module.exports = {
     });
 
     return config;
-  }
+  },
 };
 

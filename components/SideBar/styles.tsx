@@ -7,6 +7,7 @@ const Wrapper = styled("div")(({ theme }) => ({
   background: "#ffffff",
   borderRadius: "1rem",
   paddingBottom: "10.5rem",
+  overflow: "hidden",
   [theme.breakpoints.down("md")]: {
     display: "none",
   },
@@ -29,6 +30,7 @@ const ImgContainer = styled("div")(() => ({
   width: "4.5rem",
   height: "4.5rem",
   borderRadius: "1.5rem",
+  overflow: "hidden",
 }));
 
 const TextWrapper = styled("div")(() => ({

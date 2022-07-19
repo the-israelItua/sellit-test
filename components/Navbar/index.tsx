@@ -38,7 +38,6 @@ const NavBar = () => {
           height: "4rem",
           padding: "0",
           boxShadow: "0",
-
           left: 0,
         }}
       >
@@ -76,6 +75,7 @@ const NavBar = () => {
                 display: { xs: "none", sm: "block" },
                 fontSize: "1.5em",
                 fontWeight: 700,
+                color: "#212236",
               }}
             >
               Sellit

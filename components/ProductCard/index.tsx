@@ -1,13 +1,15 @@
 import Image from "next/image";
-import { Typography, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Bolt } from "../../assets/svgs";
+import { truncate } from "../../utils";
+import { Product } from "../../interfaces/product";
 import { Wrapper, CardPrice, ImageWrapper } from "./styles";
 
-const ProductCard = () => {
+const ProductCard = ({ item }: { item: Product }) => {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image src="/product.png" alt="" layout="fill" />
+        <Image src="/product.jpeg" alt="" layout="fill" priority />
       </ImageWrapper>
       <Typography
         sx={{
@@ -16,11 +18,11 @@ const ProductCard = () => {
           fontWeight: 400,
         }}
       >
-        Sellit Limited Edition Hoodie...
+        {truncate(item.description)}
       </Typography>
       <CardPrice>
         <Bolt />
-        <Typography variant="h5">$197</Typography>
+        <Typography variant="h5">${item.price}</Typography>
         <Typography variant="body1">$145.00</Typography>
       </CardPrice>
     </Wrapper>
