@@ -13,7 +13,7 @@ import LinkIcon from "./link.svg";
 import Instagram from "./instagram.svg";
 import Facebook from "./facebook.svg";
 import Twitter from "./twitter.svg";
-import TikTok from "./tikTok.svg";
+import TikTok from "./tiktok.svg";
 import Message from "./message.svg";
 import Reviews from "./reviews.svg";
 import Social from "./socials.svg";
