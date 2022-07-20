@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 
-const FilterWrapper = styled("button")(() => ({
+const FilterWrapper = styled("button")(({ theme }) => ({
   border: "1px solid #CCD7E7",
   boxShadow: "0px 4px 6px 0px #F4F6F8",
   borderRadius: "0.75rem",
@@ -11,6 +11,9 @@ const FilterWrapper = styled("button")(() => ({
   display: "flex",
   alignItems: "center",
 
+  [theme.breakpoints.down("md")]: {
+    display: "none",
+  },
   "& svg": {
     marginRight: "0.5rem",
     transform: "rotate(270deg)",

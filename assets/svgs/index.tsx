@@ -23,6 +23,12 @@ import Activity from "./activity.svg";
 import View from "./view.svg";
 import Sort from "./sort.svg";
 import Setting from "./setting.svg";
+import List from "./list.svg";
+import Featured from "./featured.svg";
+import Newest from "./newest.svg";
+import Oldest from "./oldest.svg";
+import PriceUp from "./price-up.svg";
+import PriceDown from "./price-down.svg";
 
 export {
   Logo,
@@ -50,4 +56,10 @@ export {
   View,
   Sort,
   Setting,
+  List,
+  Featured,
+  Newest,
+  Oldest,
+  PriceUp,
+  PriceDown,
 };

@@ -6,7 +6,6 @@ const Wrapper = styled("div")(({ theme }) => ({
   boxShadow: "0px 12px 32px 2px #EAECF5",
   background: "#ffffff",
   borderRadius: "1rem",
-  paddingBottom: "10.5rem",
   overflow: "hidden",
   [theme.breakpoints.down("md")]: {
     display: "none",
