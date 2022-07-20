@@ -24,8 +24,8 @@ const ImageWrapper = styled("div")(({ theme }) => ({
     height: "14rem",
   },
   [theme.breakpoints.down("sm")]: {
-    width: "10rem",
-    height: "10rem",
+    width: "11rem",
+    height: "11rem",
   },
 }));
 

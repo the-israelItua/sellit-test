@@ -36,6 +36,30 @@ const SmallAvatar = styled(Avatar)(({ theme }) => ({
   },
 }));
 
+const SearchWrapper = styled("div")(({ theme }) => ({
+  borderRadius: "0.75rem",
+  marginLeft: "8.5625rem",
+  width: "30rem",
+  height: "3rem",
+  backgroundColor: "#F5F8FF",
+  [theme.breakpoints.down("md")]: {
+    marginLeft: "1rem",
+    width: "22rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
+  },
+
+  "& .MuiInputBase-input": {
+    "&::placeholder": {
+      fontSize: "1em",
+      fontWeight: 600,
+      color: "#303741",
+      opacity: "1",
+    },
+  },
+}));
+
 const IconBadge = styled(Badge)(({ theme }) => ({
   background: "#F5F8FF",
   borderRadius: "0.5rem",
@@ -110,6 +134,7 @@ export {
   NavItem,
   BigAvatar,
   SmallAvatar,
+  SearchWrapper,
   IconBadge,
   SignUp,
   BigBadge,

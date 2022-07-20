@@ -1,8 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const getProducts = createAsyncThunk('products/getProducts', async () => {
-  const response = await axios.get('https://api.staging.sellit.co/api/v1/shops/tosin/products?fields=[images]');
-  console.log(response)
+interface QueryParams {
+  query?: string;
+  next?: string;
+  previous?: string;
+}
+
+export const getProducts = createAsyncThunk('products/getProducts', async ({ query, next, previous }: QueryParams) => {
+  const filter = `${query ? `&query=title:${query}` : ""}${next ? `&next=${next}` : ""}${previous ? `&previous=${previous}` : ""} `
+  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASEURL}/shops/tosin/products?fields=[images]&limit=4${filter}`);
   return response.data;
 });

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Badge from "@mui/material/Badge";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import SearchBar from "../SearchBar";
 import ProfileImage from "../../assets/images/profile_image.png";
@@ -20,6 +20,7 @@ import {
   NavItem,
   BigAvatar,
   SmallAvatar,
+  SearchWrapper,
   SignUp,
   BigBadge,
   IconBadge,
@@ -54,7 +55,6 @@ const NavBar = () => {
               <MenuIcon />
             </IconButton>
           </Box>
-
           <Box
             sx={{
               ml: "0.5rem",
@@ -84,21 +84,23 @@ const NavBar = () => {
             </IconBadge>
           </Box>
 
-          <SearchBar />
+          <SearchWrapper>
+            <SearchBar
+              placeholder="Products, Stores, Groups, & People"
+              onSubmit={() => {}}
+            />
+          </SearchWrapper>
 
           <NavItem sx={{ margin: "0 2rem 0 2.5rem" }}>
             <AboutIcon />
             <Typography variant="h6">About</Typography>
           </NavItem>
-
           <NavItem sx={{ mr: "8.125rem" }}>
             <CategoryIcon />
             <Typography variant="h6">Categories</Typography>
             <ChevronDown />
           </NavItem>
-
           <SignUp>Sign Up</SignUp>
-
           <Badge
             overlap="circular"
             anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
@@ -112,7 +114,6 @@ const NavBar = () => {
               <Image src={ProfileImage} alt="profile image" layout="fill" />
             </BigAvatar>
           </Badge>
-
           <Badge
             anchorOrigin={{ vertical: "top", horizontal: "right" }}
             overlap="circular"
@@ -126,7 +127,6 @@ const NavBar = () => {
               <BellIcon />
             </BigBadge>
           </Badge>
-
           <Badge
             anchorOrigin={{ vertical: "top", horizontal: "right" }}
             overlap="circular"
