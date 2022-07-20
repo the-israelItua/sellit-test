@@ -40,8 +40,9 @@ const SearchWrapper = styled("div")(({ theme }) => ({
   borderRadius: "0.75rem",
   marginLeft: "8.5625rem",
   width: "30rem",
-  height: "3rem",
+  height: "2.5rem",
   backgroundColor: "#F5F8FF",
+
   [theme.breakpoints.down("md")]: {
     marginLeft: "1rem",
     width: "22rem",

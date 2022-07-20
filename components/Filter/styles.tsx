@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 
-const Select = styled("button")(() => ({
+const FilterWrapper = styled("button")(() => ({
   border: "1px solid #CCD7E7",
   boxShadow: "0px 4px 6px 0px #F4F6F8",
   borderRadius: "0.75rem",
@@ -13,6 +13,7 @@ const Select = styled("button")(() => ({
 
   "& svg": {
     marginRight: "0.5rem",
+    transform: "rotate(270deg)",
   },
   "& p": {
     marginRight: "0.5rem",
@@ -22,4 +23,4 @@ const Select = styled("button")(() => ({
   },
 }));
 
-export { Select };
+export { FilterWrapper };

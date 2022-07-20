@@ -4,8 +4,10 @@ import { getProducts } from "../../features/products";
 import { SearchWrapper } from "./styles";
 import SelectField from "../SelectField";
 import SearchBar from "../SearchBar";
+import Filter from "../Filter";
+import { CategoriesIcon, View, Sort } from "../../assets/svgs";
 
-const Filters = () => {
+const FilterControls = () => {
   const dispatch = useAppDispatch();
 
   const searchProduct = (title: string) => {
@@ -16,14 +18,18 @@ const Filters = () => {
     <Box
       sx={{
         display: { xs: "none", sm: "flex" },
-        px: { xs: "0", lg: "1.5rem" },
+        ml: { xs: "0", lg: "1.5rem" },
+        mb: "2rem",
+        width: "100%",
+        justifyContent: "space-between",
       }}
     >
-      {/* <SelectField
-        placeholder="Categories"
+      <SelectField
+        defaultValue="Categories"
+        defaultIcon={<CategoriesIcon />}
         options={[{ label: "Shirt" }]}
         onSelect={(val) => console.log(val)}
-      /> */}
+      />
 
       <SearchWrapper>
         <SearchBar
@@ -31,23 +37,22 @@ const Filters = () => {
           onSubmit={(val) => searchProduct(val)}
         />
       </SearchWrapper>
+
+      <Filter />
       <SelectField
-        placeholder="Categories"
+        defaultValue="View"
+        defaultIcon={<View />}
         options={[{ label: "Shirt" }]}
         onSelect={(val) => console.log(val)}
       />
       <SelectField
-        placeholder="Categories"
+        defaultValue="Sort"
+        defaultIcon={<Sort />}
         options={[{ label: "Shirt" }]}
         onSelect={(val) => console.log(val)}
       />
-      {/* <SelectField
-        placeholder="Categories"
-        options={[{ label: "Shirt" }]}
-        onSelect={(val) => console.log(val)}
-      /> */}
     </Box>
   );
 };
 
-export default Filters;
+export default FilterControls;

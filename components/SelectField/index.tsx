@@ -1,67 +1,42 @@
-import React, { useState, useRef, ReactNode } from "react";
+import * as React from "react";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
 import { ChevronDown } from "../../assets/svgs";
-import Typography from "@mui/material/Typography";
-// import useOnClickOutside from "../../hooks/useOnClickOutside";
-import {
-  DropDownContainer,
-  DropDownHeader,
-  //   PlaceText,
-  //   DropDownList,
-  DropDownListContainer,
-  //   ListItem,
-} from "./styles";
+import { Select } from "./styles";
+import { Typography } from "@mui/material";
 
-interface SelectOption {
-  label: string;
-  icon?: ReactNode;
-}
-
-interface SelectProps {
-  placeholder: string;
-  options: SelectOption[];
-  onSelect: (val: string) => void;
-}
-
-const SelectField = ({ placeholder, options, onSelect }: SelectProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<SelectOption | null>(
-    null
-  );
-
-  const ref = useRef();
-
-  //   useOnClickOutside(ref, () => setIsOpen(false));
-
-  const toggling = () => setIsOpen(!isOpen);
-
-  const onOptionClicked = (option: SelectOption) => () => {
-    setSelectedOption(option);
-    setIsOpen(false);
-    onSelect(option.label);
+const SelectField = ({ defaultValue, defaultIcon }) => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
-    <DropDownContainer>
-      <DropDownHeader onClick={toggling}>
-        {selectedOption ? (
-          selectedOption.label
-        ) : (
-          <Typography>{placeholder}</Typography>
-        )}
-        <ChevronDown size={25} />
-      </DropDownHeader>
-      {/* {isOpen && (
-        <DropDownListContainer>
-          <DropDownList>
-            {options.map((option) => (
-              <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
-                {option.label}
-              </ListItem>
-            ))}
-          </DropDownList>
-        </DropDownListContainer>
-      )} */}
-    </DropDownContainer>
+    <div>
+      <Select onClick={handleClick}>
+        {defaultIcon} <Typography variant="body1">{defaultValue}</Typography>{" "}
+        <ChevronDown />
+      </Select>
+      <Menu
+        id="fade-menu"
+        MenuListProps={{
+          "aria-labelledby": "fade-button",
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+    </div>
   );
 };
 

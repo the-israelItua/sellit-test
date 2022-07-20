@@ -3,6 +3,7 @@ import MenuIcon from "./menu-icon.svg";
 import SearchIcon from "./search-icon.svg";
 import AboutIcon from "./about-icon.svg";
 import CategoryIcon from "./category-icon.svg";
+import CategoriesIcon from "./categories.svg";
 import ChevronDown from "./chevron-down.svg";
 import ChevronRight from "./chevron-right.svg";
 import BellIcon from "./bell-icon.svg";
@@ -19,6 +20,9 @@ import Reviews from "./reviews.svg";
 import Social from "./socials.svg";
 import About from "./about.svg";
 import Activity from "./activity.svg";
+import View from "./view.svg";
+import Sort from "./sort.svg";
+import Setting from "./setting.svg";
 
 export {
   Logo,
@@ -26,6 +30,7 @@ export {
   SearchIcon,
   AboutIcon,
   CategoryIcon,
+  CategoriesIcon,
   ChevronDown,
   ChevronRight,
   BellIcon,
@@ -42,4 +47,7 @@ export {
   Social,
   About,
   Activity,
+  View,
+  Sort,
+  Setting,
 };
