@@ -54,7 +54,11 @@ const SelectField = ({
         TransitionComponent={Fade}
       >
         {options.map((item) => (
-          <DropDownItem onClick={handleSelect} sx={{ width: "14.625rem" }}>
+          <DropDownItem
+            onClick={handleSelect}
+            sx={{ width: "14.625rem" }}
+            key={item.label}
+          >
             {item.icon} <Typography variant="body1">{item.label}</Typography>
           </DropDownItem>
         ))}
