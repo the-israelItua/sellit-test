@@ -1,5 +1,6 @@
 import React, { ReactNode, useState, MouseEvent } from "react";
 import Fade from "@mui/material/Fade";
+import Box from "@mui/material/Box";
 import { ChevronDown } from "../../assets/svgs";
 import { Select, DropDown, DropDownItem } from "./styles";
 import { Typography } from "@mui/material";
@@ -40,7 +41,10 @@ const SelectField = ({
   return (
     <div>
       <Select onClick={handleClick} className="select__field">
-        {defaultIcon} <Typography variant="body1">{defaultValue}</Typography>
+        <Box>
+          {defaultIcon} <Typography variant="body1">{defaultValue}</Typography>
+        </Box>
+
         <ChevronDown className="chevron" />
       </Select>
       <DropDown

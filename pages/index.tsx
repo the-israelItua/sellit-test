@@ -18,10 +18,13 @@ import { per_page_limit } from "../utils";
 
 const ProductsWrapper = styled("div")(({ theme }) => ({
   padding: "1.5rem 0",
-  marginLeft: "1.5rem",
+  margin: "0 1.5rem",
   width: "100%",
   [theme.breakpoints.down("md")]: {
-    padding: "1rem",
+    marginLeft: "0rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    padding: "1.5rem 1rem",
   },
 }));
 
@@ -32,8 +35,13 @@ const Header = styled("div")(({ theme }) => ({
   marginLeft: "1.5rem",
   borderBottom: "1px solid #E7EEFD",
   width: "100%",
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
     marginLeft: "0rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    marginLeft: "0rem",
+    padding: "0 1rem 1rem",
   },
 }));
 
@@ -76,8 +84,8 @@ const Home: NextPage = () => {
           <Grid container spacing={2}>
             {Array(4)
               .fill(1)
-              .map((item: Product) => (
-                <Grid item xs={6} sm={4} lg={3} key={item.id}>
+              .map((item, index) => (
+                <Grid item xs={6} sm={4} lg={3} key={index}>
                   <ProductLoading />
                 </Grid>
               ))}

@@ -12,7 +12,12 @@ const Select = styled("button")(() => ({
   background: "#ffffff",
   display: "flex",
   alignItems: "center",
+  justifyContent: "space-between",
 
+  "& div": {
+    display: "flex",
+    alignItems: "center",
+  },
   "& svg": {
     marginRight: "0.5rem",
   },

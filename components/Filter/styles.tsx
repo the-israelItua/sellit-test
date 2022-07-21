@@ -10,6 +10,7 @@ const FilterWrapper = styled("button")(({ theme }) => ({
   background: "#ffffff",
   display: "flex",
   alignItems: "center",
+  marginRight: "0.75rem",
 
   [theme.breakpoints.down("md")]: {
     display: "none",

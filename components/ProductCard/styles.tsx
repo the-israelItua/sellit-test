@@ -1,30 +1,23 @@
 import { styled } from "@mui/material/styles";
 
 const Wrapper = styled("div")(({ theme }) => ({
-  width: "15rem",
+  width: "100%",
   position: "relative",
   marginBottom: "1.25rem",
   [theme.breakpoints.down("md")]: {
-    width: "14rem",
-  },
-  [theme.breakpoints.down("sm")]: {
-    width: "10rem",
+    width: "100%",
   },
 }));
 
 const ImageWrapper = styled("div")(({ theme }) => ({
-  width: "15rem",
+  width: "100%",
   height: "15rem",
   position: "relative",
   borderRadius: "1rem",
   boxShadow: "0px 8px 16px 4px #EAECF5",
   overflow: "hidden",
   [theme.breakpoints.down("md")]: {
-    width: "14rem",
-    height: "14rem",
-  },
-  [theme.breakpoints.down("sm")]: {
-    width: "11rem",
+    width: "100%",
     height: "11rem",
   },
 }));

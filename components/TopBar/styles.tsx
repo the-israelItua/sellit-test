@@ -19,6 +19,7 @@ const BgWrapper = styled("div")(({ theme }) => ({
     margin: 0,
     borderRadius: "1.0625rem 1.0625rem 0 0",
     height: "10.25rem",
+    width: "100%",
   },
 }));
 
